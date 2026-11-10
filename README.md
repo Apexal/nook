@@ -2,6 +2,23 @@
 
 The shared home screen for Frank and Sarah: a floorplan that glows where chores are due, shared and private task lists, and a shopping list. It runs on a landscape Android tablet on the kitchen counter, built with React 18, Vite and Supabase.
 
+![Home: the floorplan glows where chores are due, with the most urgent listed beside it](docs/screenshots/home.png)
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/chores.png" alt="Chores, grouped by room"><br><sub><b>Chores</b>, grouped by room or hottest first</sub></td>
+    <td width="50%"><img src="docs/screenshots/tasks.png" alt="Shared task categories and the two private lists, unlocked"><br><sub><b>Tasks</b>: shared categories, and two private lists behind the household PIN</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/shopping.png" alt="Shopping list with usuals"><br><sub><b>Shopping</b>, with usuals learned from what you buy</sub></td>
+    <td><img src="docs/screenshots/plan.png" alt="Plan editor"><br><sub><b>Plan</b>: draw the rooms and place furniture</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/home-dark.png" alt="Home in dark mode"><br><sub>Dark mode</sub></td>
+    <td align="center"><img src="docs/screenshots/phone-home.png" alt="Home on a phone" width="45%"><br><sub>On a phone</sub></td>
+  </tr>
+</table>
+
 ## Try it now (demo mode)
 
 ```bash

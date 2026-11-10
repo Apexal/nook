@@ -1,0 +1,40 @@
+/* App-level layout on top of the Nook design system. */
+html, body, #root { height: 100%; }
+body { overscroll-behavior: none; user-select: none; -webkit-user-select: none; }
+input, textarea { user-select: text; -webkit-user-select: text; }
+.nk-screen { height: 100vh; height: 100dvh; }
+
+/* Screen layout: a main pane, and on the tablet a fixed-width side column next to it. */
+.app-body { flex: 1; display: flex; min-width: 0; min-height: 0; }
+.pane { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 18px; padding: 28px 24px 24px 28px; }
+.pane--alone { padding-right: 28px; }
+.side { width: var(--side-w); flex: none; display: flex; flex-direction: column; gap: 14px; padding: 28px 28px 24px 0; }
+.side--under-head { padding-top: 96px; }
+.screen-head { display: flex; align-items: flex-end; gap: 16px; }
+.scroll-list { display: flex; flex-direction: column; gap: 10px; overflow: auto; flex: 1; padding-bottom: 8px; }
+.task-columns { columns: 2; column-gap: 16px; }
+.private-title { margin-top: 24px; }
+
+/* Phones (keep in sync with PHONE_QUERY in src/lib/device.ts): one scrolling column, a bottom tab bar, no floorplan. */
+@media (max-width: 720px), (max-height: 500px) {
+  .nk-screen { flex-direction: column; }
+  .app-body { flex-direction: column; overflow-y: auto; overscroll-behavior: contain; }
+  .pane, .side { flex: none; width: auto; padding: 20px 16px 8px; }
+  .side { padding-top: 0; padding-bottom: 24px; }
+  .side--under-head { padding-top: 8px; }
+  .private-title { margin-top: 0; }
+  .nk-h1 { font-size: 32px; line-height: 38px; }
+  .screen-head { flex-wrap: wrap; align-items: center; gap: 12px; }
+  .task-columns { columns: 1; }
+
+  .nk-rail { order: 1; width: 100%; height: auto; flex-direction: row; padding: 4px 4px calc(4px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); }
+  .nk-rail__top, .nk-rail__foot { display: none; }
+  .nk-rail__items { flex-direction: row; justify-content: space-around; }
+  .nk-rail__item { flex: 1; width: auto; min-height: 60px; }
+  .nk-rail__pill { width: 56px; height: 32px; }
+  .nk-rail__label { font-size: 13px; }
+
+  .nk-toast-slot { bottom: calc(84px + env(safe-area-inset-bottom)); padding: 0 12px; }
+  .nk-sheet:not(.nk-sheet--inline) { inset: 8px 8px calc(8px + env(safe-area-inset-bottom)); width: auto; max-width: none; }
+  .nk-pin { width: min(360px, calc(100vw - 32px)); padding: 24px 16px; }
+}
